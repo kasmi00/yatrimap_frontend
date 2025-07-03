@@ -24,37 +24,40 @@ const AdminNavbar = () => {
     { name: "Bookings", path: "/bookingAdmin", icon: <Calendar className="h-5 w-5" /> },
     { name: "User List", path: "/userlist", icon: <Users className="h-5 w-5" /> },
     { name: "Guide List", path: "/guide", icon: <UserCog className="h-5 w-5" /> },
-    { name: "Accomodations", path: "/addAccommodation", icon: <UserCog className="h-5 w-5" /> },
+    { name: "Accommodations", path: "/addAccommodation", icon: <UserCog className="h-5 w-5" /> },
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-64 h-screen bg-green/70 text-white flex flex-col overflow-y-auto">
+    <div className="fixed top-0 left-0 w-64 h-screen bg-green-700 text-white flex flex-col shadow-lg">
+
       {/* Logo */}
-      <div className="p-6 border-b border-white/50">
+      <div className="p-6 border-b border-white/20">
         <div className="flex items-center justify-center">
-          <h1 className="ml-2 font-serif text-2xl font-medium text-white">YatriMap</h1>
+          <h1 className="text-2xl font-serif font-semibold text-white tracking-wide">
+            YatriMap
+          </h1>
         </div>
       </div>
 
       {/* Navigation */}
-      <nav className="px-4 py-6 space-y-1 flex-1">
+      <nav className="flex-1 px-4 py-6 space-y-2">
         {navItems.map((item) => (
           <div
             key={item.path}
-            className="flex items-center px-4 py-3 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-green-800"
+            className="flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all duration-200 bg-green-600/30 hover:bg-green-600/70 hover:shadow-inner"
             onClick={() => navigate(item.path)}
           >
-            <div className="text-green-300">{item.icon}</div>
-            <span className="ml-3 font-medium">{item.name}</span>
+            <div className="text-white">{item.icon}</div>
+            <span className="ml-3 font-medium text-white">{item.name}</span>
           </div>
         ))}
       </nav>
 
       {/* Logout Button */}
-      <div className="p-6 w-full">
+      <div className="p-6 mt-auto">
         <button
           onClick={handleLogout}
-          className="flex items-center w-full px-4 py-3 rounded-lg text-gray-300 hover:bg-green-800 hover:text-white transition-colors duration-200"
+          className="flex items-center w-full px-4 py-3 rounded-lg text-white bg-green-600/30 hover:bg-red-600 hover:text-white transition-all duration-200"
         >
           <LogOut className="h-5 w-5" />
           <span className="ml-3 font-medium">Logout</span>
