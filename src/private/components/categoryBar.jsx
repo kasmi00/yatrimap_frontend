@@ -30,6 +30,7 @@ const CategoryBar = ({ onCategorySelect }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Fetch destination data
   useEffect(() => {
     fetchDestinations();
   }, []);
@@ -82,6 +83,9 @@ const CategoryBar = ({ onCategorySelect }) => {
     }
   };
 
+  const itemsPerPage = isMobile ? 3 : 6;
+  const visibleCategories = categories.slice(visibleIndex, visibleIndex + itemsPerPage);
+
   if (error) {
     return (
       <div className="w-full p-4 bg-red-50 rounded-lg">
@@ -90,17 +94,17 @@ const CategoryBar = ({ onCategorySelect }) => {
     );
   }
 
-  const itemsPerPage = isMobile ? 3 : 6;
-  const visibleCategories = categories.slice(visibleIndex, visibleIndex + itemsPerPage);
-
   return (
     <div className="relative w-full bg-gray-100 pt-6 pb-6 rounded-xl shadow-sm">
       <div className="max-w-full mx-auto px-4">
+        {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-bold text-gray-800 flex items-center">
             <Tag className="mr-2 h-5 w-5 text-blue-600" />
             Explore Categories
           </h3>
+
+          {/* Navigation Buttons */}
           <div className="flex space-x-2">
             <button
               onClick={handlePrev}
@@ -125,25 +129,31 @@ const CategoryBar = ({ onCategorySelect }) => {
           </div>
         </div>
 
+        {/* Category Grid */}
         <div className={`grid ${isMobile ? 'grid-cols-3' : 'grid-cols-6'} gap-3`}>
           {visibleCategories.map(({ name, icon }) => {
             const count = categoryDestinations[name] || 0;
+            const isSelected = selectedCategory === name;
+
             return (
               <button
                 key={name}
                 onClick={() => handleCategoryClick(name)}
                 className={`flex flex-col items-center justify-center p-3 rounded-lg transition-all duration-300
-                  ${selectedCategory === name
+                  ${isSelected
                     ? 'bg-blue-300 text-black shadow-lg transform scale-105'
                     : 'bg-white hover:bg-blue-50 hover:shadow hover:scale-105'}`}
               >
                 <span className="text-2xl mb-1">{icon}</span>
                 <span className="text-xs font-medium text-center line-clamp-1">{name}</span>
+
                 {count > 0 && (
-                  <span className={`text-xs mt-1 px-2 py-1 rounded-full ${selectedCategory === name
-                    ? 'bg-white text-blue-600'
-                    : 'bg-blue-100 text-blue-800'
-                    }`}>
+                  <span
+                    className={`text-xs mt-1 px-2 py-1 rounded-full ${isSelected
+                        ? 'bg-white text-blue-600'
+                        : 'bg-blue-100 text-blue-800'
+                      }`}
+                  >
                     {count}
                   </span>
                 )}
