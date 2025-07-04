@@ -12,13 +12,10 @@ const CategoryBar = ({ onCategorySelect }) => {
     { name: "Trekking", icon: "🥾" },
     { name: "HimalayanTreks", icon: "🏔️" },
     { name: "Lake and River", icon: "🌊" },
-    { name: "National park", icon: "🌳" },
     { name: "Nature", icon: "🌿" },
-    { name: "Adventure", icon: "🧗" },
     { name: "Camping", icon: "⛺" },
     { name: "Mountain Climbing", icon: "🧗‍♂️" },
     { name: "Spiritual", icon: "🙏" },
-    { name: "Historical Sites", icon: "🏰" },
     { name: "Adventure Sports", icon: "🏄" }
   ];
 
