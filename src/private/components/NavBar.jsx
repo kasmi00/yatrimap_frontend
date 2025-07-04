@@ -15,8 +15,8 @@ const Navbar = () => {
 
   const navLinkClasses = ({ isActive }) =>
     isActive
-      ? "text-yellow-300 font-semibold"
-      : "text-white hover:text-yellow-200";
+      ? "text-black-300 font-semibold"
+      : "text-white hover:text-black-200";
 
   const closeMenus = () => {
     setDropdownOpen(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
             </NavLink>
 
             <button
-              className="text-white hover:text-yellow-200"
+              className="text-white hover:text-black-200"
               onClick={() => navigate("/bucket-list")}
             >
               <Heart className="h-6 w-6" />
@@ -112,7 +112,7 @@ const Navbar = () => {
                 navigate("/bucket-list");
                 closeMenus();
               }}
-              className="flex items-center text-white hover:text-yellow-200"
+              className="flex items-center text-white hover:text-black-200"
             >
               <Heart className="h-5 w-5 mr-2" />
               Bucket List
@@ -134,7 +134,7 @@ const Navbar = () => {
                   navigate("/login");
                   closeMenus();
                 }}
-                className="flex items-center text-white hover:text-yellow-200"
+                className="flex items-center text-white hover:text-black-200"
               >
                 <User className="h-5 w-5 mr-2" />
                 Login
