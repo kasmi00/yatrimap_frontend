@@ -4,77 +4,34 @@ import { useNavigate } from "react-router-dom";
 
 const SplashPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0); // State for carousel index
+  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
   const currentimage = ["/src/images/image.png"];
 
-  // Destinations data
   const destinations = [
-    {
-      id: 1,
-      title: "ABC Basecamp Trek",
-      image: "/src/images/pasupathi1.jpg"
-    },
-    {
-      id: 2,
-      title: "Langtang Valley Trek",
-      image: "/src/images/slider4.png"
-    },
-    {
-      id: 3,
-      title: "Tsho Rolpa Lake",
-      image: "/src/images/chitanNationalPark.png"
-    },
-    {
-      id: 4,
-      title: "Mustang Trek",
-      image: "/src/images/Muktinath1.jpg"
-    },
-    {
-      id: 5,
-      title: "Trek to Mt. Everest",
-      image: "/src/images/slider1.png"
-    }
+    { id: 1, title: "ABC Basecamp Trek", image: "/src/images/pasupathi1.jpg" },
+    { id: 2, title: "Langtang Valley Trek", image: "/src/images/slider4.png" },
+    { id: 3, title: "Tsho Rolpa Lake", image: "/src/images/chitanNationalPark.png" },
+    { id: 4, title: "Mustang Trek", image: "/src/images/Muktinath1.jpg" },
+    { id: 5, title: "Trek to Mt. Everest", image: "/src/images/slider1.png" }
   ];
 
-  // Featured properties data
   const Topdestination = [
-    {
-      id: 1,
-      title: "Mt. Everest",
-      image: "/src/images/slider1.png"
-    },
-    {
-      id: 2,
-      title: "Khumai Dada Trek",
-      image: "/src/images/slider2.png"
-    },
-    {
-      id: 3,
-      title: "Mt.Kanchenjunga",
-      image: "/src/images/Chitlang.png"
-    },
-    {
-      id: 4,
-      title: "Langtang Valley",
-      image: "/src/images/slider4.png"
-    },
+    { id: 1, title: "Mt. Everest", image: "/src/images/slider1.png" },
+    { id: 2, title: "Khumai Dada Trek", image: "/src/images/slider2.png" },
+    { id: 3, title: "Mt.Kanchenjunga", image: "/src/images/Chitlang.png" },
+    { id: 4, title: "Langtang Valley", image: "/src/images/slider4.png" }
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const Logo = () => (
     <div className="flex items-start">
-      <span
-        className={`text-xl font-serif ${isScrolled ? "text-gray-600" : "text-gray-800"
-          }`}
-      >
+      <span className={`text-xl font-serif ${isScrolled ? "text-gray-600" : "text-gray-800"}`}>
         YatriMap
       </span>
     </div>
@@ -82,10 +39,7 @@ const SplashPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 font-serif">
-      <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-green-100 border-b border-gray-200" : "bg-gray-200"
-          }`}
-      >
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-[#5C7678] border-b border-gray-200" : "bg-gray-200"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-20">
             <Logo />
@@ -93,8 +47,8 @@ const SplashPage = () => {
               <button
                 onClick={() => navigate("/register")}
                 className={`px-6 py-2 font-medium rounded-full ${isScrolled
-                  ? "text-white-800 border border-blue-800 hover:bg-blue-500"
-                  : "text-white-800 border border-green-600 hover:bg-green-400"
+                  ? "text-white border border-white hover:bg-white hover:text-[#5C7678]"
+                  : "text-[#5C7678] border border-[#5C7678] hover:bg-[#5C7678] hover:text-white"
                   }`}
               >
                 Sign Up
@@ -102,8 +56,8 @@ const SplashPage = () => {
               <button
                 onClick={() => navigate("/login")}
                 className={`px-6 py-2 font-medium rounded-full ${isScrolled
-                  ? "text-white-800 border border-blue-800 hover:bg-blue-500"
-                  : "text-white-800 border border-green-600 hover:bg-green-400"
+                  ? "text-white border border-white hover:bg-white hover:text-[#5C7678]"
+                  : "text-[#5C7678] border border-[#5C7678] hover:bg-[#5C7678] hover:text-white"
                   }`}
               >
                 Log in
@@ -120,7 +74,7 @@ const SplashPage = () => {
           style={{
             backgroundImage: `url(${currentimage[0]})`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center"
           }}
         >
           <div className="absolute inset-0 bg-black/30"></div>
@@ -132,8 +86,7 @@ const SplashPage = () => {
                 Travelers' Choice, Best of the Best
               </h1>
               <p className="text-lg font-serif mb-6">
-                Among our top 1% of places, stays, and experiences—decided by
-                you.
+                Among our top 1% of places, stays, and experiences—decided by you.
               </p>
               <button className="bg-black text-white px-6 py-2.5 rounded-lg hover:bg-blue-800 transition-colors">
                 See the destinations
@@ -166,7 +119,7 @@ const SplashPage = () => {
       </div>
 
       {/* Ratings Section */}
-      <div className="bg-green-100 py-16">
+      <div className="bg-[#5C7678] py-16 text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Rated "EXCELLENT" for a reason.</h2>
           <div className="flex justify-center gap-1 mb-4">
@@ -175,7 +128,7 @@ const SplashPage = () => {
             ))}
           </div>
           <p className="text-lg mb-8">
-            We don't just list any destinaiton—we personally check to ensure your perfect trip.
+            We don't just list any destination—we personally check to ensure your perfect trip.
           </p>
         </div>
       </div>
