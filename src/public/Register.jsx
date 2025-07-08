@@ -86,7 +86,7 @@ const RegisterPage = () => {
                 name="username"
                 value={data.username}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-600"
+                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#5C7678]"
                 required
               />
             </div>
@@ -99,7 +99,7 @@ const RegisterPage = () => {
                 name="email"
                 value={data.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-600"
+                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#5C7678]"
                 required
               />
             </div>
@@ -112,7 +112,7 @@ const RegisterPage = () => {
                 name="password"
                 value={data.password}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-600"
+                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#5C7678]"
                 required
               />
             </div>
@@ -127,7 +127,7 @@ const RegisterPage = () => {
                 onChange={handleChange}
                 className={`w-full px-4 py-2 border-2 rounded-lg focus:outline-none ${!passwordMatch && data.confirmPassword
                     ? "border-red-500 focus:border-red-500"
-                    : "border-gray-300 focus:border-green-600"
+                    : "border-gray-300 focus:border-[#5C7678]"
                   }`}
                 required
               />
@@ -140,7 +140,7 @@ const RegisterPage = () => {
             <button
               type="submit"
               disabled={loading || !passwordMatch}
-              className="w-full py-3 mt-4 bg-black text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 mt-4 bg-black text-white rounded-lg hover:bg-[#5C7678] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? "Registering..." : "Register"}
             </button>
