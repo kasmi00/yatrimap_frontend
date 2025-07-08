@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-green-600 shadow-sm">
+    <nav className="bg-[#5C7678] shadow-sm">
       <div className="max-w-full mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -97,7 +97,7 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-green-700 rounded-lg p-4 mt-2 space-y-4">
+          <div className="md:hidden bg-[#5C7678] rounded-lg p-4 mt-2 space-y-4">
             <NavLink to="/destinations" className={navLinkClasses} onClick={closeMenus}>
               Destinations
             </NavLink>
