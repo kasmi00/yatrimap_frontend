@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const LoginScreen = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(""); // Added missing success state
+  const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -16,7 +16,7 @@ const LoginScreen = () => {
   });
 
   const images = [
-    "/src/images/firstimg.png", // Use public folder
+    "/src/images/firstimg.png",
     "/src/images/loginimg.png",
   ];
 
@@ -43,7 +43,6 @@ const LoginScreen = () => {
         setSuccess("Login successful! Redirecting...");
         setLoading(false);
 
-        // Redirect user based on role
         if (data.email === "admin@gmail.com" && data.password === "admin") {
           navigate("/admin");
         } else {
@@ -63,7 +62,7 @@ const LoginScreen = () => {
       {/* Left Section */}
       <div className="w-1/2 p-12 flex flex-col justify-center relative overflow-hidden">
         <h1 className="text-3xl font-inriaSans font-medium text-center text-black mb-2">
-          Morethan a trek,its a  journey with us!!
+          More than a trek, it’s a journey with us!!
         </h1>
         <div className="mt-8 flex justify-center">
           <img
@@ -125,7 +124,7 @@ const LoginScreen = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 mt-6 bg-[#0F172A] text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed border border-[#0F172A]"
+              className="w-full py-3 mt-6 bg-[#0F172A] text-white rounded-lg hover:bg-[#5C7678] transition-colors disabled:opacity-50 disabled:cursor-not-allowed border border-[#0F172A]"
             >
               {loading ? "Loading..." : "Login"}
             </button>
